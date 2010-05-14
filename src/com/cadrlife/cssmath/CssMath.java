@@ -27,7 +27,21 @@ public class CssMath {
 		return a.replaceFirst("[A-Z|a-z]+$", "");
 	}
 	public static String operate(Operator op, String a, String b) {
-		return operateScalar(op, a, b);
+		String scalarA = asScalar(a);
+		String scalarB = asScalar(b);
+		String unitsA = unitsOf(a);
+		String unitsB = unitsOf(b);
+		String scalarResult = operateScalar(op, scalarA, scalarB);
+		if (unitsA.equals(unitsB)) {
+			return scalarResult + unitsA;
+		}
+		if ("".equals(unitsA)) {
+			return scalarResult + unitsB;
+		}
+		if ("".equals(unitsB)) {
+			return scalarResult + unitsA;
+		}
+		return scalarResult;
 	}
 	private static String operateScalar(Operator op, String a, String b) {
 		try {
