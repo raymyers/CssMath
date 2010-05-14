@@ -13,4 +13,12 @@ public class CssMathTest {
 		assertEquals("5", CssMath.add("2", "3"));
 		assertEquals("3", CssMath.divide("6", "2"));
 	}
+	
+	@Test
+	public void floor() {
+		assertEquals("6", CssMath.floor("6"));
+		assertEquals("6", CssMath.floor("6.25"));
+		assertEquals("6", CssMath.floor("6.0"));
+		assertEquals("6px", CssMath.floor("6.0px"));
+	}
 }
