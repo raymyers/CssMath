@@ -1,5 +1,6 @@
 package com.cadrlife.cssmath;
 
-public interface TwoArg<A, B, C> {
-	public C apply(A a, B b);
+public interface TwoArg {
+	public Double apply(Double a, Double b);
+	public Long apply(Long a, Long b);
 }

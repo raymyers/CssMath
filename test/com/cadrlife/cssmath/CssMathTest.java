@@ -33,6 +33,18 @@ public class CssMathTest {
 	}
 	
 	@Test
+	public void matchingUnit_divide() {
+		assertEquals("7cm", CssMath.add("4cm", "3cm"));
+		assertEquals("6.3px", CssMath.add("6px", ".3px"));
+	}
+	
+	@Test
+	public void colorNames() {
+		assertEquals("#fffffe", CssMath.subtract("white", "#000001"));
+		assertEquals("white", CssMath.add("#fffffe", "#000001"));
+	}
+	
+	@Test
 	public void floor() {
 		assertEquals("6", CssMath.floor("6"));
 		assertEquals("6", CssMath.floor("6.25"));
